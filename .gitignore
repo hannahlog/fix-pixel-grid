@@ -1,0 +1,8 @@
+# Ignore rirtual environment
+env/
+
+# Ignore pycache
+code/__pycache__/
+
+# Scrapwork from previously messing around with PIL
+old/
