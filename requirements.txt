@@ -1,3 +1,7 @@
 Pillow
 imageio
 pre-commit
+pytest
+argparse
+glob
+numpy

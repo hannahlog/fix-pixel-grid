@@ -1,4 +1,4 @@
-# Ignore rirtual environment
+# Ignore virtual environment
 env/
 
 # Ignore pycache
@@ -6,3 +6,6 @@ code/__pycache__/
 
 # Scrapwork from previously messing around with PIL
 old/
+
+# Other scrap
+scrap/
