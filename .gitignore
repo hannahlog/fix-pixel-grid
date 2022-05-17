@@ -3,6 +3,9 @@ env/
 
 # Ignore pycache
 src/__pycache__/
+test/__pycache__/
+.pytest_cache/
+test/__pycache__/
 
 # Scrapwork from previously messing around with PIL
 old/

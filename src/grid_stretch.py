@@ -42,6 +42,7 @@ def infer_axis_scale(frames, axis):
 
     # Difference between each pixel and its neighbor along the given axis
     # TODO: give a toy illustrative example
+    # TODO: refactor into own function (for ease of testing)?
     pixel_diffs = np.take(frames, np.arange(1, size), axis=axis) - np.take(
         frames, np.arange(0, size - 1), axis=axis
     )
@@ -74,6 +75,9 @@ def infer_axis_scale(frames, axis):
     block_bounds = insert_bookends(edge_indices + 1, start=0, end=edges.shape[0] + 1)
 
     block_lengths = block_bounds[1:] - block_bounds[:-1]
+
+    print("Block Lengths:")
+    print(block_lengths)
 
     scale = np_mode(block_lengths)
 
@@ -141,8 +145,8 @@ def mask_by_row_indices(frames, grid_indices, dtype=np.uint8):
     h_mask = np.zeros(shape=(width_in), dtype=np.int64)
     h_mask[h_indices] = 1
 
+    # Only the rows and columns specified by the mask for each axis are kept
     frames = np.repeat(frames, v_mask, axis=v_axis)
-
     frames = np.repeat(frames, h_mask, axis=h_axis)
     return frames
 
