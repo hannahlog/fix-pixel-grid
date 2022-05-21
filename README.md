@@ -35,9 +35,9 @@ If our user has dragged the corner of the emulator window to a size of 86x54 pix
 
 This is a disaster. Most of the columns are 2 pixels wide, but some are 3 pixels wide (notably, one of Mario's pupils is erroneously wider than the other.)  Similarly, most of the rows are 2 pixels tall, but some are only 1 pixel tall. The grid of "blocks" isn't a checkerboard of even squares, but instead consists of rectangular blocks with dimensions of either 2x2, 3x2, 2x1, or 3x1, depending on the particular row or column:
 
-|                 Displayed frame (zoomed for convenience)                 |                      Displayed frame with grid overlaid                     | Grid by itself                                      |
-|:------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|-----------------------------------------------------|
-| ![Displayed frame (zoomed for convenience)](examples/mario_86x54_x6.png) | ![Displayed frame with grid overlaid](examples/mario_86x54_animated_x6.gif) | ![Grid by itself](examples/mario_grid_86x54_x6.png) |
+|                 Displayed frame (zoomed for convenience)                 |                      Displayed frame with grid overlaid                     |
+|:------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
+| ![Displayed frame (zoomed for convenience)](examples/mario_86x54_x6.png) | ![Displayed frame with grid overlaid](examples/mario_86x54_animated_x6.gif) |
 
 
 If our player takes screenshots or records gifs under these conditions, the resulting images will be distorted as above.
@@ -79,4 +79,4 @@ fix.py [-h] [--out OUTPUT_DIRECTORY]
 
 - `--force-scale` -- convenience option specifying a size for the pixel blocks other than the one apparent in the input. E.g. on an input where most blocks are 2 pixels tall and 2 pixels wide, `--force-scale 4` will attempt to recreate the gif as if it had been recorded at x4 the native resolution, instead of at x2
 
-- `paths` -- path(s) to input images. If a path to a directory is given, all images in that directory will be processed
+- `paths` -- path(s) to input images. If a path to a directory is given, all images in that directory will be processed. Accepts `gif` and `png` image formats, among other image formats that Python Imaging Library can read
