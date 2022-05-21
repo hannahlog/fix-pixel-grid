@@ -13,11 +13,11 @@ This is a personal commandline tool for fixing subtle distortion present in some
 
 Suppose someone emulates a sprite-based game, such as Super Mario World (SNES, 1990). For ease of illustration, let's pretend that the game in question has an internal, native resolution of 40 pixels wide by 30 pixels tall, so that this is an entire frame of gameplay:
 
-![Still frame from Super Mario World, pretending that 40x30 is the size of the entire frame](examples/still_40x30.png)
+![Still frame from Super Mario World, pretending that 40x30 is the size of the entire frame](examples/mario.png)
 
-This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “8x” or “800% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to an 8-by-8 "block" of pixels, with the same color as the original pixel, in the newly-resized game window: the game window is exactly 8 times as wide and 8 times as tall as the game's internal resolution. This is also the result if the player manually enters 320x240 pixels as the emulator's output resolution.
+This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “12x” or “1200% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to a 12-by-12 "block" of pixels, with the same color as the original pixel, in the newly-resized game window: the game window is exactly 12 times as wide and 12 times as tall as the game's internal resolution. This is also the result if the player manually enters 480x360 pixels as the emulator's output resolution.
 
-![Same still frame from Super Mario World, but exactly 8 times as large](examples/still_40x30_x8.png)
+![Same still frame from Super Mario World, but exactly 12 times as large](examples/mario_x12.png)
 
 Instead, suppose our player enters an output resolution that's _not_ a nice integer multiple of 40x30. How should the emulator upscale from the original 40x30 image to something that's not exactly 80x60, or 160x120, etc.? What if the player drags around the corner of the emulator window, resizing it arbitrarily, possibly even to a resolution that's not even 4:3 in aspect ratio?
 
@@ -40,7 +40,7 @@ This is a disaster. Most of the columns are 2 pixels wide, but some are 3 pixels
 | ![Displayed frame (zoomed for convenience)](examples/mario_86x54_x6.png) | ![Displayed frame with grid overlaid](examples/mario_86x54_animated_x6.gif) | ![Grid by itself](examples/mario_grid_86x54_x6.png) |
 
 
-If our player takes a screenshot or records a gif under these conditions, the resulting image will be distorted as above.
+If our player takes screenshots or records gifs under these conditions, the resulting images will be distorted as above.
 
 Finally, **fix-pixel-grid** comes into play. This tool attempts to fix gifs (or still images) recorded from emulation under condition (2), outputting its best guess at what the recorded gif _would have been_ had the display size been an integer multiple of the native resolution. It does this using only the gif itself, with no other information available, and the gif possibly having been cropped (it is not assumed that an input gif shows the full game window.)
 
