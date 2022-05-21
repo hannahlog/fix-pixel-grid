@@ -11,7 +11,7 @@ This is a personal commandline tool for fixing subtle distortion present in some
 
 # Motivation & Use Cases
 
-Suppose someone emulates a sprite-based game, such as Super Mario World (SNES, 1990). For ease of illustration, let's pretend that the game in question has an internal, native resolution of 40 pixels wide by 30 pixels tall, so that this is an entire frame of gameplay:
+Suppose someone emulates a sprite-based game, such as _Super Mario World_ (SNES, 1990). For ease of illustration, let's pretend that the game in question has an internal, native resolution of 40 pixels wide by 30 pixels tall, so that this is an entire frame of gameplay:
 
 ![Still frame from Super Mario World, pretending that 40x30 is the size of the entire frame](examples/mario.png)
 
@@ -42,7 +42,7 @@ This is a disaster. Most of the columns are 2 pixels wide, but some are 3 pixels
 
 If our player takes screenshots or records gifs under these conditions, the resulting images will be distorted as above.
 
-Finally, **fix-pixel-grid** comes into play. This tool attempts to fix gifs (or still images) recorded from emulation under condition (2), outputting its best guess at what the recorded gif _would have been_ had the display size been an integer multiple of the native resolution. It does this using only the gif itself, with no other information available, and the gif possibly having been cropped (it is not assumed that an input gif shows the full game window.)
+Finally, **fix-pixel-grid** comes into play. **This tool attempts to fix gifs (or still images) recorded from emulation under condition (2), outputting its best guess at what the recorded gif _would have been_ had the display size been an integer multiple of the native resolution.** It does this using only the gif itself, with no other information available, and the gif possibly having been cropped (it is not assumed that an input gif shows the full game window.)
 
 Here's our distorted frame before and after running through **fix-pixel-grid**:
 
@@ -75,7 +75,7 @@ fix.py [-h] [--out OUTPUT_DIRECTORY]
 
 - `--out` -- specify an output directory. Otherwise, outputs will be written to `./out` by default
 
-- `--force-square` -- specifies that the vertical and horizontal scale are the same: the blocks must be as tall as they are wide. (This is not always true, e.g. _Sonic the Hedgehog (8-bit)_ on Game Gear has "pixels" that are 3:2 in aspect.) Otherwise, the tool will not assume that the hoizontal and vertical axes have the same scale
+- `--force-square` -- specifies that the vertical and horizontal scale are the same: the blocks must be as tall as they are wide. (This is not always true, e.g. _Sonic the Hedgehog (8-bit)_ on Game Gear has "pixels" that are 3:2 in aspect.) Otherwise, the tool will not assume that the horizontal and vertical axes have the same scale
 
 - `--force-scale` -- convenience option specifying a size for the pixel blocks other than the one apparent in the input. E.g. on an input where most blocks are 2 pixels tall and 2 pixels wide, `--force-scale 4` will attempt to recreate the gif as if it had been recorded at x4 the native resolution, instead of at x2
 
