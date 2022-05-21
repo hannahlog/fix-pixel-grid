@@ -79,4 +79,4 @@ fix.py [-h] [--out OUTPUT_DIRECTORY]
 
 - `--force-scale` -- convenience option specifying a size for the pixel blocks other than the one apparent in the input. E.g. on an input where most blocks are 2 pixels tall and 2 pixels wide, `--force-scale 4` will attempt to recreate the gif as if it had been recorded at x4 the native resolution, instead of at x2
 
-- `paths` -- path(s) to input images. If a path to a directory is given, all images in that directory will be processed. Accepts `gif` and `png` image formats, among other image formats that Python Imaging Library can read
+- `paths` -- path(s) to input images. If a path to a directory is given, all images in that directory will be processed. Accepts `gif`, `png`, and other image formats readable by Python Imaging Library
