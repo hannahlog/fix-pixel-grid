@@ -15,13 +15,13 @@ Suppose someone emulates a sprite-based game, such as Super Mario World (SNES, 1
 
 ![Still frame from Super Mario World, pretending that 40x30 is the size of the entire frame](examples/mario.png)
 
-This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “12x” or “1200% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to a 12-by-12 "block" of pixels, with the same color as the original pixel, in the newly-resized game window: the game window is exactly 12 times as wide and 12 times as tall as the game's internal resolution. This is also the result if the player manually enters 480x360 pixels as the emulator's output resolution.
+This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “12x” or “1200% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to a 12-by-12 "block" of pixels, with the same color as the original pixel, in the newly-resized game window, resulting in a game window exactly 12 times as wide and 12 times as tall as the game's internal resolution. This is also the result if the player manually enters 480x360 pixels as the emulator's output resolution.
 
 ![Same still frame from Super Mario World, but exactly 12 times as large](examples/mario_x12.png)
 
-Instead, suppose our player enters an output resolution that's _not_ a nice integer multiple of 40x30. How should the emulator upscale from the original 40x30 image to something that's not exactly 80x60, or 160x120, etc.? What if the player drags around the corner of the emulator window, resizing it arbitrarily, possibly even to a resolution that's not even 4:3 in aspect ratio?
+Instead, suppose our player enters an output resolution that's _not_ a nice integer multiple of 40x30. How should the emulator upscale from the original 40x30 image to something that's not exactly 80x60, 160x120, etc.? What if the player drags around the corner of the emulator window, resizing it arbitrarily, possibly even to a resolution that's not even 4:3 in aspect ratio?
 
-In that case, the emulator can't just scale up every native-resolution pixel to be a solid 8x8 (or 2x2, 3x3, etc.) block of pixels like before, so it instead has to do one of two things:
+In that case, the emulator can't just scale up every native-resolution pixel to be a solid 12x12 (or 2x2, 3x3, etc.) block of pixels like before, so it instead has to do one of two things:
 
 (1) stretch the output image in a way that blurs pixels together, or
 
