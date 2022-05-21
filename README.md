@@ -15,7 +15,7 @@ Suppose someone emulates a sprite-based game, such as _Super Mario World_ (SNES,
 
 ![Still frame from Super Mario World, pretending that 40x30 is the size of the entire frame](examples/mario.png)
 
-This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “12x” or “1200% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to a 12-by-12 "block" of pixels, with the same color as the original pixel, in the newly-resized game window, resulting in a game window exactly 12 times as wide and 12 times as tall as the game's internal resolution. This is also the result if the player manually enters 480x360 pixels as the emulator's output resolution.
+This is a very small image. The player likely wants to see the game at a higher resolution. If they go into the emulator's settings and select an integer zoom level, e.g. “12x” or “1200% Zoom”, then there's no question of what the emulator should display: every pixel in the original frame corresponds to a 12-by-12 "block" of pixels, with the same color as the original pixel, resulting in a newly-resized game window exactly 12 times as wide and 12 times as tall as the game's internal resolution. This is also the result if the player manually enters 480x360 pixels as the emulator's output resolution.
 
 ![Same still frame from Super Mario World, but exactly 12 times as large](examples/mario_x12.png)
 
