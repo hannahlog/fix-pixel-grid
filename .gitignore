@@ -18,3 +18,7 @@ out/
 
 # Temp directory (currently used for workaround moving between PIL and Imageio)
 tmp/
+
+# Ignore Sublime project/workspace
+*.sublime-project
+*.sublime-workspace
